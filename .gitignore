@@ -2,24 +2,28 @@
 target/
 generated/
 
-# User-specific stuff:
+# User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
-.idea/dictionaries
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
 
-# Sensitive or high-churn files:
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
-.idea/**/dataSources.xml
 .idea/**/dataSources.local.xml
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
 
-# Gradle:
+# Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
-
 # CMake
 cmake-build-debug/
 
@@ -49,10 +53,31 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# Editor-based Rest Client
+.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+
 # Ignore all project files from Eclipse
 .classpath
 .project
 .settings
+
+# Sonarlint plugin
+.idea/**/sonarlint/
+
+# SonarQube Plugin
+.idea/**/sonarIssues.xml
+
+# Markdown Navigator plugin
+.idea/**/markdown-navigator.xml
+.idea/**/markdown-navigator-enh.xml
+.idea/**/markdown-navigator/
+
+# Cache file creation bug
+# See https://youtrack.jetbrains.com/issue/JBR-2257
+.idea/$CACHE_FILE$
 
 # Ignore log files
 #log/
