@@ -10,6 +10,7 @@
 
 <ul>
     <li><a href="rest/api/nixzd/v11/sayHello.xml">Say hello</a></li>
+    <li><a href="rest/swagger.json">Swagger.json</a></li>
 </ul>
 
 <h2>Version info</h2>

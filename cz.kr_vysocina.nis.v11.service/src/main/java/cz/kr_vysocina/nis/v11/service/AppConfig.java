@@ -9,6 +9,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 public class AppConfig extends ResourceConfig {
 
     public AppConfig() {
+
         register(NisApiV11Custom.class); //Register NIS API Service
         register(new AbstractBinder() {
             @Override
@@ -16,5 +17,7 @@ public class AppConfig extends ResourceConfig {
                 bind(MockDataProvider.class).to(IDataProvider.class); //TODO replace by real implementation
             }
         });
+
+        packages("io.swagger.jaxrs"); //Register swagger package
     }
 }
