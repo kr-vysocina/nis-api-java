@@ -1,23 +1,33 @@
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>${name}</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
 </head>
 <body>
 
-<h1>${name}</h1>
+<div id="swagger-ui"></div>
 
-<h2>Interfaces</h2>
+<script src="./swagger-ui-bundle.js"></script>
+<script src="./swagger-ui-standalone-preset.js"></script>
+<script>
+    window.onload = function () {
 
-<ul>
-    <li><a href="rest/api/nixzd/v11/sayHello.xml">Say hello</a></li>
-    <li><a href="rest/swagger.json">Swagger.json</a></li>
-</ul>
+        const ui = SwaggerUIBundle({
+            url: "rest/swagger.json",
+            dom_id: '#swagger-ui',
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout"
+        })
 
-<h2>Version info</h2>
-
-<div>
-    Current version: ${version}
-</div>
-
+        window.ui = ui
+    }
+</script>
 </body>
 </html>
