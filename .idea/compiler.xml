@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cz.kr_vysocina.nis.v11.core" />
+        <module name="cz.kr_vysocina.nis.v11.service" />
+        <module name="cz.kr_vysocina.nis.v11.mock" />
+        <module name="cz.kr_vysocina.nis.v11.api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cz.kr_vysocina.nis.v11.api" target="7" />
+      <module name="cz.kr_vysocina.nis.v11.core" target="7" />
+      <module name="cz.kr_vysocina.nis.v11.mock" target="7" />
+      <module name="cz.kr_vysocina.nis.v11.service" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

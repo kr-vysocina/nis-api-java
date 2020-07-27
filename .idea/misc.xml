@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.api/pom.xml" />
+        <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.core/pom.xml" />
+        <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.mock/pom.xml" />
+        <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
