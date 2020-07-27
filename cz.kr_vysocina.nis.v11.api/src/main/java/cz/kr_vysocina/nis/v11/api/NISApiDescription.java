@@ -4,7 +4,7 @@ public class NISApiDescription {
 
     public static final String PARAM_ID_TYPE_DESC = "Typ identifikátoru pacienta, aktuálně „RC“ = rodné číslo resp. číslo pojištěnce, v budoucnu případně nový typ ID (bezvýznamový identifikátor, resortní ID,…)";
     public static final String PARAM_ID_VALUE_DESC = "Identifikátor pacienta (hodnota)";
-    public static final String PARAM_PURPOSE_OF_USE_DESC = "Důvod dotazu na PS (EMERGENCY | TREATMENT | NONNCP) ";
+    public static final String PARAM_PURPOSE_OF_USE_DESC = "Důvod dotazu na PS (EMERGENCY | TREATMENT | NONNCP | PATIENT) ";
     public static final String PARAM_SUBJECT_NAME_ID_DESC = "Identifikace uživatele, který požaduje data v Base64 kódování (saml2SubjectNameID). Příklady dle implementace: EidasId, LoginName,...";
     public static final String PARAM_REQUEST_ORG_ID_DESC = "Identifikace organizace posílající request (primární použití pro identifikaci organizace při purposeOfUse=NONNCP, např. Portál občana). \n" +
             "Příklady dle implementace: IČO, ...\n";
