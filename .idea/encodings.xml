@@ -9,5 +9,13 @@
     <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v11.mock/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.mock/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.mock/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.service/src/main/resources" charset="UTF-8" />
   </component>
 </project>

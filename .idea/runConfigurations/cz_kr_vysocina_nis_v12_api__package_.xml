@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="cz.kr_vysocina.nis.v11.service [package]" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="cz.kr_vysocina.nis.v12.api [package]" type="MavenRunConfiguration" factoryName="Maven">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -18,14 +18,12 @@
             <map />
           </option>
           <option name="resolveToWorkspace" value="false" />
-          <option name="workingDirPath" value="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service" />
+          <option name="workingDirPath" value="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.api" />
         </MavenRunnerParameters>
       </option>
     </MavenSettings>
     <method v="2">
-      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.core/pom.xml" goal="install" />
-      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.mock/pom.xml" goal="install" />
-      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.api/pom.xml" goal="install" />
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.core/pom.xml" goal="install" />
     </method>
   </configuration>
 </component>

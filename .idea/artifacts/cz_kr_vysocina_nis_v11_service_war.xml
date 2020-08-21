@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cz.kr_vysocina.nis.v11.service:war">
+    <output-path>$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>cz.kr_vysocina.nis.v11.service</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="nis-api-v11-service.war">
+      <element id="artifact" artifact-name="cz.kr_vysocina.nis.v11.service:war exploded" />
+    </root>
+  </artifact>
+</component>

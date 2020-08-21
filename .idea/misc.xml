@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service" />
+    <file type="web" url="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.service" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -13,6 +14,10 @@
         <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.core/pom.xml" />
         <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.mock/pom.xml" />
         <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service/pom.xml" />
+        <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.api/pom.xml" />
+        <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.core/pom.xml" />
+        <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.mock/pom.xml" />
+        <option value="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.service/pom.xml" />
       </list>
     </option>
   </component>

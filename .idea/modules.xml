@@ -6,6 +6,10 @@
       <module fileurl="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v11.core/cz.kr_vysocina.nis.v11.core.iml" filepath="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.core/cz.kr_vysocina.nis.v11.core.iml" />
       <module fileurl="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v11.mock/cz.kr_vysocina.nis.v11.mock.iml" filepath="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.mock/cz.kr_vysocina.nis.v11.mock.iml" />
       <module fileurl="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service/cz.kr_vysocina.nis.v11.service.iml" filepath="$PROJECT_DIR$/cz.kr_vysocina.nis.v11.service/cz.kr_vysocina.nis.v11.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.api/cz.kr_vysocina.nis.v12.api.iml" filepath="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.api/cz.kr_vysocina.nis.v12.api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.core/cz.kr_vysocina.nis.v12.core.iml" filepath="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.core/cz.kr_vysocina.nis.v12.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.mock/cz.kr_vysocina.nis.v12.mock.iml" filepath="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.mock/cz.kr_vysocina.nis.v12.mock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cz.kr_vysocina.nis.v12.service/cz.kr_vysocina.nis.v12.service.iml" filepath="$PROJECT_DIR$/cz.kr_vysocina.nis.v12.service/cz.kr_vysocina.nis.v12.service.iml" />
     </modules>
   </component>
 </project>

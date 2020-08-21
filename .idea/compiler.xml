@@ -10,6 +10,10 @@
         <module name="cz.kr_vysocina.nis.v11.service" />
         <module name="cz.kr_vysocina.nis.v11.mock" />
         <module name="cz.kr_vysocina.nis.v11.api" />
+        <module name="cz.kr_vysocina.nis.v12.core" />
+        <module name="cz.kr_vysocina.nis.v12.service" />
+        <module name="cz.kr_vysocina.nis.v12.mock" />
+        <module name="cz.kr_vysocina.nis.v12.api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +21,10 @@
       <module name="cz.kr_vysocina.nis.v11.core" target="7" />
       <module name="cz.kr_vysocina.nis.v11.mock" target="7" />
       <module name="cz.kr_vysocina.nis.v11.service" target="1.7" />
+      <module name="cz.kr_vysocina.nis.v12.api" target="7" />
+      <module name="cz.kr_vysocina.nis.v12.core" target="7" />
+      <module name="cz.kr_vysocina.nis.v12.mock" target="7" />
+      <module name="cz.kr_vysocina.nis.v12.service" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
