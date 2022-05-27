@@ -1,9 +1,6 @@
 package cz.kr_vysocina.nis.v11.core.models.getPsExists;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlRootElement(name = "patientSummary")
@@ -43,7 +40,8 @@ public class PatientSummaryModel {
     @XmlElement(name = "cdaL1Oid")
     protected String cdaL1oid;
 
-    @XmlElement(name = "documentList")
+    @XmlElementWrapper(name="documentList")
+    @XmlElement(name = "document")
     protected List<DocumentMetadataModel> documentList;
 
     public PatientSummaryModel() {
