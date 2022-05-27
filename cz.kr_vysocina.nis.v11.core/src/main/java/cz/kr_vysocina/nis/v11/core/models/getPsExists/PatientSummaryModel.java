@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 @XmlRootElement(name = "patientSummary")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -41,6 +42,9 @@ public class PatientSummaryModel {
 
     @XmlElement(name = "cdaL1Oid")
     protected String cdaL1oid;
+
+    @XmlElement(name = "documentList")
+    protected List<DocumentMetadataModel> documentList;
 
     public PatientSummaryModel() {
     }
@@ -131,6 +135,14 @@ public class PatientSummaryModel {
 
     public void setCdaL1oid(String cdaL1oid) {
         this.cdaL1oid = cdaL1oid;
+    }
+
+    public List<DocumentMetadataModel> getDocumentList() {
+        return documentList;
+    }
+
+    public void setDocumentList(List<DocumentMetadataModel> documentList) {
+        this.documentList = documentList;
     }
 }
 
