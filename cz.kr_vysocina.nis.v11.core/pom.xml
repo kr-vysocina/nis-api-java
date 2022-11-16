@@ -6,7 +6,7 @@
 
     <groupId>cz.kr_vysocina.nis.v11</groupId>
     <artifactId>cz.kr_vysocina.nis.v11.core</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.3</version>
     <build>
         <plugins>
             <plugin>

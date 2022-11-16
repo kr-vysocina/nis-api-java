@@ -28,10 +28,16 @@ public class PatientSummaryModel {
     @XmlElement(name = "cdaL3Oid")
     protected String cdaL3oid;
 
+    @XmlElement(name = "cdaL3Size")
+    protected Long cdaL3Size;
+
+    @XmlElement(name = "cdaL3Hash")
+    protected String cdaL3Hash;
+
     @XmlElement(name = "effectiveTime")
     protected String effectiveTime;
 
-    @XmlElement(name = "cdaL1support")
+    @XmlElement(name = "cdaL1Support")
     protected boolean cdaL1support;
 
     @XmlElement(name = "cdaL1Id")
@@ -40,9 +46,16 @@ public class PatientSummaryModel {
     @XmlElement(name = "cdaL1Oid")
     protected String cdaL1oid;
 
+    @XmlElement(name = "cdaL1Size")
+    protected Long cdaL1Size;
+
+    @XmlElement(name = "cdaL1Hash")
+    protected String cdaL1Hash;
+
     @XmlElementWrapper(name="documentList")
     @XmlElement(name = "document")
     protected List<DocumentMetadataModel> documentList;
+
 
     public PatientSummaryModel() {
     }
@@ -103,6 +116,22 @@ public class PatientSummaryModel {
         this.cdaL3oid = cdaL3oid;
     }
 
+    public Long getCdaL3Size() {
+        return cdaL3Size;
+    }
+
+    public void setCdaL3Size(Long cdaL3Size) {
+        this.cdaL3Size = cdaL3Size;
+    }
+
+    public String getCdaL3Hash() {
+        return cdaL3Hash;
+    }
+
+    public void setCdaL3Hash(String cdaL3Hash) {
+        this.cdaL3Hash = cdaL3Hash;
+    }
+
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -133,6 +162,22 @@ public class PatientSummaryModel {
 
     public void setCdaL1oid(String cdaL1oid) {
         this.cdaL1oid = cdaL1oid;
+    }
+
+    public Long getCdaL1Size() {
+        return cdaL1Size;
+    }
+
+    public void setCdaL1Size(Long cdaL1Size) {
+        this.cdaL1Size = cdaL1Size;
+    }
+
+    public String getCdaL1Hash() {
+        return cdaL1Hash;
+    }
+
+    public void setCdaL1Hash(String cdaL1Hash) {
+        this.cdaL1Hash = cdaL1Hash;
     }
 
     public List<DocumentMetadataModel> getDocumentList() {

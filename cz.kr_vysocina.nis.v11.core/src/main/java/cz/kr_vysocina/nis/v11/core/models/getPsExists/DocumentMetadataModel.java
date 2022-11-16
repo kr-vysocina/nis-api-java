@@ -24,6 +24,12 @@ public class DocumentMetadataModel {
     @XmlElement(name = "effectiveTime")
     protected String effectiveTime;
 
+    @XmlElement(name = "documentHash")
+    protected String documentHash;
+
+    @XmlElement(name = "documentSize")
+    protected Long documentSize;
+
     public DocumentMetadataModel() {
     }
 
@@ -65,5 +71,21 @@ public class DocumentMetadataModel {
 
     public void setEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
+    }
+
+    public String getDocumentHash() {
+        return documentHash;
+    }
+
+    public void setDocumentHash(String documentHash) {
+        this.documentHash = documentHash;
+    }
+
+    public Long getDocumentSize() {
+        return documentSize;
+    }
+
+    public void setDocumentSize(Long documentSize) {
+        this.documentSize = documentSize;
     }
 }
