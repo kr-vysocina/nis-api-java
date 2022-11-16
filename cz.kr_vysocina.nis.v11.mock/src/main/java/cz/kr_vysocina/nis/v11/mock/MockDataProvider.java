@@ -3,6 +3,7 @@ package cz.kr_vysocina.nis.v11.mock;
 import cz.kr_vysocina.nis.v11.core.models.CDAType;
 import cz.kr_vysocina.nis.v11.core.models.IdType;
 import cz.kr_vysocina.nis.v11.core.models.PurposeOfUse;
+import cz.kr_vysocina.nis.v11.core.models.getPsExists.DocumentMetadataModel;
 import cz.kr_vysocina.nis.v11.core.models.getPsExists.GetPsExistsResponseModel;
 import cz.kr_vysocina.nis.v11.core.models.getPsExists.PatientSummaryModel;
 import cz.kr_vysocina.nis.v11.core.models.getPsExists.SourceIdModel;
@@ -84,6 +85,34 @@ public class MockDataProvider implements IDataProvider {
         patientSummaryModel1.setCdaL1support(true);
         patientSummaryModel1.setCdaL1Id("ICZ123940.2");
         patientSummaryModel1.setCdaL1oid("1.2.203.24341.1.10.35001000.4");
+
+        List<DocumentMetadataModel> documentList = new ArrayList<>();
+
+        DocumentMetadataModel documentMetadataModel1 = new DocumentMetadataModel();
+        documentMetadataModel1.setId("ICZ123940.3");
+        documentMetadataModel1.setOid("1.2.203.24341.1.10.35001000.6.1");
+        documentMetadataModel1.setLabel("Ambulantní zpráva ve formátu PDF");
+        documentMetadataModel1.setType("ambulantni-zprava");
+        documentMetadataModel1.setEffectiveTime("20220107153400");
+        documentList.add(documentMetadataModel1);
+
+        DocumentMetadataModel documentMetadataModel2 = new DocumentMetadataModel();
+        documentMetadataModel2.setId("ICZ123940.4");
+        documentMetadataModel2.setOid("1.2.203.24341.1.10.35001000.7.1");
+        documentMetadataModel2.setLabel("Propouštěcí zpráva ve formátu PDF");
+        documentMetadataModel2.setType("propousteci-zprava");
+        documentMetadataModel2.setEffectiveTime("20160122153400");
+        documentList.add(documentMetadataModel2);
+
+        DocumentMetadataModel documentMetadataModel3 = new DocumentMetadataModel();
+        documentMetadataModel3.setId("ICZ123940.5");
+        documentMetadataModel3.setOid("1.2.203.24341.1.10.35001000.8.1");
+        documentMetadataModel3.setLabel("Jakýkoliv jiný dokument ve formátu PDF");
+        documentMetadataModel3.setType("ostatni");
+        documentMetadataModel3.setEffectiveTime("20160122153400");
+        documentList.add(documentMetadataModel3);
+
+        patientSummaryModel1.setDocumentList(documentList);
 
         patientSummaryModelList.add(patientSummaryModel1);
 
