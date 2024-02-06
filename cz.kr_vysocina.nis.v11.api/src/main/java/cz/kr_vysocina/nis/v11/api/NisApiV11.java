@@ -57,6 +57,7 @@ public class NisApiV11 {
             response = GetPsExistsResponseModel.class)
     @ApiResponse(code = 200, message = "Response for the parameters")
     public Response getPsExists(
+            @ApiParam(value = NISApiDescription.PARAM_ID_RID_DESC, required = true) @QueryParam("idRID") String idRID,
             @ApiParam(value = NISApiDescription.PARAM_ID_TYPE_DESC, required = true) @QueryParam("idType") IdType idType,
             @ApiParam(value = NISApiDescription.PARAM_ID_VALUE_DESC, required = true) @QueryParam("idValue") String idValue,
             @ApiParam(value = NISApiDescription.PARAM_PURPOSE_OF_USE_DESC, required = true) @QueryParam("purposeOfUse") PurposeOfUse purposeOfUse,
@@ -77,7 +78,7 @@ public class NisApiV11 {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
-        GetPsExistsResponseModel result = m_dataProvider.getPsExistsData(idType, idValue, purposeOfUse, subjectNameId, requestOrganizationId, requestId);
+        GetPsExistsResponseModel result = m_dataProvider.getPsExistsData(idRID, idType, idValue, purposeOfUse, subjectNameId, requestOrganizationId, requestId);
 
         logger.debug("Returning result of getPsExists.xml");
 
@@ -94,6 +95,7 @@ public class NisApiV11 {
     @Produces({MediaType.APPLICATION_OCTET_STREAM})
     public Response getPsCda(
             @ApiParam(value = NISApiDescription.PARAM_SOURCE_IDENTIFIER_DESC, required = true) @QueryParam("sourceIdentifier") String sourceIdentifier,
+            @ApiParam(value = NISApiDescription.PARAM_ID_RID_DESC, required = true) @QueryParam("idRID") String idRID,
             @ApiParam(value = NISApiDescription.PARAM_ID_TYPE_DESC, required = true) @QueryParam("idType") IdType idType,
             @ApiParam(value = NISApiDescription.PARAM_ID_VALUE_DESC, required = true) @QueryParam("idValue") String idValue,
             @ApiParam(value = NISApiDescription.PARAM_PURPOSE_OF_USE_DESC, required = true) @QueryParam("purposeOfUse") PurposeOfUse purposeOfUse,
@@ -121,7 +123,7 @@ public class NisApiV11 {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
-        byte[] result = m_dataProvider.getPsCdaData(sourceIdentifier, idType, idValue, purposeOfUse, subjectNameId, requestOrganizationId, cdaType, cdaId, cdaOid, requestId);
+        byte[] result = m_dataProvider.getPsCdaData(sourceIdentifier, idRID, idType, idValue, purposeOfUse, subjectNameId, requestOrganizationId, cdaType, cdaId, cdaOid, requestId);
 
         logger.debug("Returning result of getPs.cda");
 

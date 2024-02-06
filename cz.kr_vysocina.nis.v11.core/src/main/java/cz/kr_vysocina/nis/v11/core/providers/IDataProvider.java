@@ -10,8 +10,8 @@ public interface IDataProvider {
 
     SayHelloModel getSayHelloData();
 
-    GetPsExistsResponseModel getPsExistsData(IdType idType, String idValue, PurposeOfUse purposeOfUse, String subjectNameId, String requestOrganizationId, String requestId);
+    GetPsExistsResponseModel getPsExistsData(String idRID, IdType idType, String idValue, PurposeOfUse purposeOfUse, String subjectNameId, String requestOrganizationId, String requestId);
 
-    byte[] getPsCdaData(String sourceIdentifier, IdType idType, String idValue, PurposeOfUse purposeOfUse, String subjectNameId, String requestOrganizationId, CDAType cdaType, String cdaId, String cdaOid, String requestId);
+    byte[] getPsCdaData(String sourceIdentifier, String idRID, IdType idType, String idValue, PurposeOfUse purposeOfUse, String subjectNameId, String requestOrganizationId, CDAType cdaType, String cdaId, String cdaOid, String requestId);
 }
 
