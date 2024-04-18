@@ -2,6 +2,7 @@ package cz.kr_vysocina.nis.v11.api;
 
 public class NISApiDescription {
 
+    public static final String PARAM_ID_RID_DESC = "Resortní indentifikátor pacienta (RID)";
     public static final String PARAM_ID_TYPE_DESC = "Typ identifikátoru pacienta, aktuálně „RC“ = rodné číslo resp. číslo pojištěnce, v budoucnu případně nový typ ID (bezvýznamový identifikátor, resortní ID,…)";
     public static final String PARAM_ID_VALUE_DESC = "Identifikátor pacienta (hodnota)";
     public static final String PARAM_PURPOSE_OF_USE_DESC = "Důvod dotazu na PS (EMERGENCY | TREATMENT | NONNCP | PATIENT) ";

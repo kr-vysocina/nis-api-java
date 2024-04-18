@@ -49,6 +49,7 @@ public class MockDataProvider implements IDataProvider {
 
     @Override
     public GetPsExistsResponseModel getPsExistsData(
+            String idRID,
             IdType idType,
             String idValue,
             PurposeOfUse purposeOfUse,
@@ -138,6 +139,7 @@ public class MockDataProvider implements IDataProvider {
     @Override
     public byte[] getPsCdaData(
             String sourceIdentifier,
+            String idRID,
             IdType idType,
             String idValue,
             PurposeOfUse purposeOfUse,
