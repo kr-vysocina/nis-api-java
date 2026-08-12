@@ -7,7 +7,8 @@ import javax.xml.bind.annotation.XmlEnum;
 @XmlEnum(String.class)
 public enum CDAType {
     L1("L1"),
-    L3("L3");
+    L3("L3"),
+    OTHER("OTHER");
 
     private String value;
 
