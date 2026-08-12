@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cz.kr_vysocina.nis.v11</groupId>
+    <artifactId>cz.kr_vysocina.nis.v11.parent</artifactId>
+    <version>1.0.4</version>
+    <packaging>pom</packaging>
+
+    <name>NIS API v11 - Parent</name>
+    <description>Aggregator/parent POM for the NIS API v11 mock implementation (core/api/mock/service modules).
+        Building the whole reactor: mvn clean install
+    </description>
+
+    <!--
+        Module order matters for a naive multi-module build: core has no internal dependencies, api and mock
+        depend on core, service depends on api and mock. Maven's reactor resolves this automatically from the
+        module dependency graph, but the listing below follows that same order for readability.
+    -->
+    <modules>
+        <module>cz.kr_vysocina.nis.v11.core</module>
+        <module>cz.kr_vysocina.nis.v11.api</module>
+        <module>cz.kr_vysocina.nis.v11.mock</module>
+        <module>cz.kr_vysocina.nis.v11.service</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Java 17 for all modules; picked up automatically by maven-compiler-plugin via this property -->
+        <maven.compiler.release>17</maven.compiler.release>
+
+        <!-- Shared dependency/plugin versions, centralized here so modules don't drift out of sync -->
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+
+        <slf4j.version>1.7.25</slf4j.version>
+        <jersey.version>2.48</jersey.version>
+        <swagger.jersey.version>1.6.16</swagger.jersey.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

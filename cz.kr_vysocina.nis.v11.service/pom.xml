@@ -4,21 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cz.kr_vysocina.nis.v11</groupId>
+    <parent>
+        <groupId>cz.kr_vysocina.nis.v11</groupId>
+        <artifactId>cz.kr_vysocina.nis.v11.parent</artifactId>
+        <version>1.0.4</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
     <artifactId>cz.kr_vysocina.nis.v11.service</artifactId>
-    <version>1.0.4</version>
     <packaging>war</packaging>
 
     <name>${project.artifactId}</name>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-
-        <slf4j.version>1.7.25</slf4j.version>
-        <jersey.version>2.27</jersey.version>
-
         <resources.dir>${basedir}/target/generated-webapp</resources.dir>
     </properties>
 
@@ -29,13 +27,13 @@
         <dependency>
             <groupId>cz.kr_vysocina.nis.v11</groupId>
             <artifactId>cz.kr_vysocina.nis.v11.api</artifactId>
-            <version>1.0.4</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>cz.kr_vysocina.nis.v11</groupId>
             <artifactId>cz.kr_vysocina.nis.v11.mock</artifactId>
-            <version>1.0.4</version>
+            <version>${project.version}</version>
         </dependency>
 
         <!--Logging-->
@@ -81,7 +79,7 @@
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-jersey2-jaxrs</artifactId>
-            <version>1.6.0</version>
+            <version>${swagger.jersey.version}</version>
         </dependency>
 
     </dependencies>
@@ -104,11 +102,9 @@
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
