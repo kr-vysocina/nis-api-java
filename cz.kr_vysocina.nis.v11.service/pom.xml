@@ -73,6 +73,16 @@
             <artifactId>jersey-hk2</artifactId>
             <version>${jersey.version}</version>
         </dependency>
+        <!--
+            Wires JAXB into JAX-RS's XML (de)serialization. Without this, Jersey has no MessageBodyWriter for
+            our @XmlRootElement response models and every request 500s with "MessageBodyWriter not found for
+            media type=application/xml" - confirmed missing (and thus broken) even before the JDK 17 upgrade.
+        -->
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-jaxb</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
 
         <!--Swagger-->
 
