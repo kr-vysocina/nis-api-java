@@ -3,9 +3,15 @@ package cz.kr_vysocina.nis.v11.mock;
 import cz.kr_vysocina.nis.v11.core.models.CDAType;
 import cz.kr_vysocina.nis.v11.core.models.IdType;
 import cz.kr_vysocina.nis.v11.core.models.PurposeOfUse;
+import cz.kr_vysocina.nis.v11.core.models.getPsExists.AuthorModel;
+import cz.kr_vysocina.nis.v11.core.models.getPsExists.ConfidentialityCodeEnum;
+import cz.kr_vysocina.nis.v11.core.models.getPsExists.DocumentFileTypeEnum;
 import cz.kr_vysocina.nis.v11.core.models.getPsExists.DocumentMetadataModel;
+import cz.kr_vysocina.nis.v11.core.models.getPsExists.DocumentTypeLOINC;
+import cz.kr_vysocina.nis.v11.core.models.getPsExists.DocumentTypeOID;
 import cz.kr_vysocina.nis.v11.core.models.getPsExists.GetPsExistsResponseModel;
 import cz.kr_vysocina.nis.v11.core.models.getPsExists.PatientSummaryModel;
+import cz.kr_vysocina.nis.v11.core.models.getPsExists.ReasonOfHospitalisationModel;
 import cz.kr_vysocina.nis.v11.core.models.getPsExists.SourceIdModel;
 import cz.kr_vysocina.nis.v11.core.models.sayHello.LiveSourceModel;
 import cz.kr_vysocina.nis.v11.core.models.sayHello.SayHelloModel;
@@ -16,6 +22,8 @@ import org.joda.time.format.ISODateTimeFormat;
 import org.apache.commons.codec.binary.Base64;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MockDataProvider implements IDataProvider {
@@ -27,6 +35,14 @@ public class MockDataProvider implements IDataProvider {
 
         result.setServertime(ISODateTimeFormat.dateTime().print(new DateTime()));
         result.setDescription("Test NIS api service implementing V11 standard - Zdrojový systém XYZ, verze 2.01, produkční");
+        result.setEnvironment("PPT");
+        result.setWave("11");
+        result.setRidOnly(false);
+        result.setIsName("nis-api-java");
+        result.setIsVersion("1.0.4");
+        result.setCdaIgVersion("2.1.4");
+        result.setFhirIgVersion("1.0.0");
+        result.setMvcVersion("11.7.9");
 
         List<LiveSourceModel> liveSourceModelList = new ArrayList<>();
 
@@ -97,34 +113,63 @@ public class MockDataProvider implements IDataProvider {
 
         List<DocumentMetadataModel> documentList = new ArrayList<>();
 
+        // Ambulantní zpráva ve formátu PDF (OrCD hospital discharge report / L1)
         DocumentMetadataModel documentMetadataModel1 = new DocumentMetadataModel();
         documentMetadataModel1.setId("ICZ123940.3");
         documentMetadataModel1.setOid("1.2.203.24341.1.10.35001000.6.1");
         documentMetadataModel1.setLabel("Ambulantní zpráva ve formátu PDF");
-        documentMetadataModel1.setType("ambulantni-zprava");
+        documentMetadataModel1.setTypeLOINC(DocumentTypeLOINC.ORCD_HOSPITAL_DISCHARGE_REPORT);
+        documentMetadataModel1.setTypeOID(DocumentTypeOID.ORCD_DISCHARGE_REPORT_L1);
         documentMetadataModel1.setEffectiveTime("20220107153400");
         documentMetadataModel1.setDocumentHash(cdaSha1Hex);
         documentMetadataModel1.setDocumentSize((long) cda.length);
+        documentMetadataModel1.setDocumentFileType(DocumentFileTypeEnum.PDF);
+        documentMetadataModel1.setConfidentialityCode(ConfidentialityCodeEnum.N);
         documentList.add(documentMetadataModel1);
 
+        // Zpráva z obrazového vyšetření (OrCD medical imaging report / L1)
         DocumentMetadataModel documentMetadataModel2 = new DocumentMetadataModel();
         documentMetadataModel2.setId("ICZ123940.4");
         documentMetadataModel2.setOid("1.2.203.24341.1.10.35001000.7.1");
-        documentMetadataModel2.setLabel("Propouštěcí zpráva ve formátu PDF");
-        documentMetadataModel2.setType("propousteci-zprava");
-        documentMetadataModel2.setEffectiveTime("20160122153400");
+        documentMetadataModel2.setLabel("Zpráva z obrazového vyšetření");
+        documentMetadataModel2.setTypeLOINC(DocumentTypeLOINC.ORCD_MEDICAL_IMAGING_REPORT);
+        documentMetadataModel2.setTypeOID(DocumentTypeOID.ORCD_MEDICAL_IMAGING_REPORT_L1);
+        documentMetadataModel2.setEffectiveTime("20220107152400");
         documentMetadataModel2.setDocumentHash(cdaSha1Hex);
         documentMetadataModel2.setDocumentSize((long) cda.length);
+        documentMetadataModel2.setDocumentFileType(DocumentFileTypeEnum.PNG);
+        documentMetadataModel2.setConfidentialityCode(ConfidentialityCodeEnum.N);
+        documentMetadataModel2.setAuthors(Collections.emptyList());
         documentList.add(documentMetadataModel2);
 
+        // Propouštěcí zpráva (OrCD hospital discharge report / L1) - with reason of hospitalisation and authors
         DocumentMetadataModel documentMetadataModel3 = new DocumentMetadataModel();
         documentMetadataModel3.setId("ICZ123940.5");
         documentMetadataModel3.setOid("1.2.203.24341.1.10.35001000.8.1");
-        documentMetadataModel3.setLabel("Jakýkoliv jiný dokument ve formátu PDF");
-        documentMetadataModel3.setType("ostatni");
+        documentMetadataModel3.setLabel("Propouštěcí zpráva");
+        documentMetadataModel3.setTypeLOINC(DocumentTypeLOINC.ORCD_HOSPITAL_DISCHARGE_REPORT);
+        documentMetadataModel3.setTypeOID(DocumentTypeOID.ORCD_HOSPITAL_DISCHARGE_REPORT_L1);
         documentMetadataModel3.setEffectiveTime("20160122153400");
         documentMetadataModel3.setDocumentHash(cdaSha1Hex);
         documentMetadataModel3.setDocumentSize((long) cda.length);
+        documentMetadataModel3.setDocumentFileType(DocumentFileTypeEnum.PDF);
+        documentMetadataModel3.setConfidentialityCode(ConfidentialityCodeEnum.N);
+
+        ReasonOfHospitalisationModel reasonOfHospitalisation = new ReasonOfHospitalisationModel();
+        reasonOfHospitalisation.setCode("K56.2");
+        reasonOfHospitalisation.setCodingScheme("1.3.6.1.4.1.12559.11.10.1.3.1.44.2");
+        reasonOfHospitalisation.setText("Volvulus");
+        documentMetadataModel3.setReasonOfHospitalisation(reasonOfHospitalisation);
+
+        AuthorModel author1 = new AuthorModel();
+        author1.setPerson("Jan Nový");
+        author1.setSpecialities(Arrays.asList("Zubař", "Gynekolog"));
+
+        AuthorModel author2 = new AuthorModel();
+        author2.setPerson("Jana Nová");
+        author2.setSpecialities(Collections.singletonList("Zubař"));
+
+        documentMetadataModel3.setAuthors(Arrays.asList(author1, author2));
         documentList.add(documentMetadataModel3);
 
         patientSummaryModel1.setDocumentList(documentList);
