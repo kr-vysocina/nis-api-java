@@ -1,6 +1,6 @@
 package cz.kr_vysocina.nis.v11.core.models.getPsExists;
 
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlRootElement(name = "patientSummary")

@@ -24,30 +24,32 @@
     </build>
 
     <dependencies>
+        <!--
+            jackson-annotations (for our models' @JsonValue) is intentionally NOT pinned here: swagger-core
+            (below) needs a specific, current jackson-annotations/jackson-databind pairing, and an explicit
+            pin at this distance would win Maven's "nearest wins" mediation over that requirement and cause
+            a runtime ClassNotFoundException in swagger-core. Let it resolve transitively from swagger-jaxrs2-jakarta.
+        -->
+
+        <!-- OpenAPI 3 annotations (@Tag/@Operation/@Parameter/@Schema/@ApiResponse) - jakarta.* build -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>2.10.1</version>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-jaxrs2-jakarta</artifactId>
+            <version>${swagger.jakarta.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-jersey2-jaxrs</artifactId>
-            <version>${swagger.jersey.version}</version>
-        </dependency>
-
-        <!-- API, java.xml.bind module -->
+        <!-- API, jakarta.xml.bind module -->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>2.3.2</version>
+            <version>4.0.5</version>
         </dependency>
 
-        <!-- Runtime, com.sun.xml.bind module -->
+        <!-- Runtime, jakarta.xml.bind module -->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.2</version>
+            <version>4.0.9</version>
         </dependency>
 
     </dependencies>

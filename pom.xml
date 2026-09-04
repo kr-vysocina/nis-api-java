@@ -37,8 +37,14 @@
         <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
 
         <slf4j.version>1.7.25</slf4j.version>
-        <jersey.version>2.48</jersey.version>
-        <swagger.jersey.version>1.6.16</swagger.jersey.version>
+        <!-- Jersey 3.1.x = Jakarta RESTful WebServices 3.1 / Jakarta EE 10 (jakarta.* namespace, Servlet 6.0) -->
+        <jersey.version>3.1.12</jersey.version>
+        <!-- Jakarta REST API version matching Jersey 3.1.x; declared explicitly wherever javax/jakarta.ws.rs.*
+             is used directly (rather than relying on it flowing transitively through the swagger dependency,
+             which is scoped "provided" upstream and so isn't transitive). -->
+        <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
+        <!-- OpenAPI 3 / Swagger Core, jakarta.* build - replaces the old Swagger 1.x (javax.*-only) tooling -->
+        <swagger.jakarta.version>2.2.48</swagger.jakarta.version>
     </properties>
 
     <build>

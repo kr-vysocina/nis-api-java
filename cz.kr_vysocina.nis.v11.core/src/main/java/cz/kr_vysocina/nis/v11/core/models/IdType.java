@@ -2,7 +2,7 @@ package cz.kr_vysocina.nis.v11.core.models;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import javax.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnum;
 
 @XmlEnum(String.class)
 public enum IdType {

@@ -1,13 +1,13 @@
 package cz.kr_vysocina.nis.v11.core.models.sayHello;
 
-import io.swagger.annotations.ApiModel;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlRootElement(name = "sayHello")
 @XmlAccessorType(XmlAccessType.FIELD)
-@ApiModel(value = "SayHello", description = "This class contains message returned from service")
+@Schema(name = "SayHello", description = "This class contains message returned from service")
 public class SayHelloModel {
 
     @XmlElement(name = "description")

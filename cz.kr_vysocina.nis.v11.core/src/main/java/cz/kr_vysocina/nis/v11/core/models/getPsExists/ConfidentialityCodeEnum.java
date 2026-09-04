@@ -2,7 +2,7 @@ package cz.kr_vysocina.nis.v11.core.models.getPsExists;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import javax.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnum;
 
 /**
  * Confidentiality level of the document: N = normal, R = restricted, V = very restricted.
