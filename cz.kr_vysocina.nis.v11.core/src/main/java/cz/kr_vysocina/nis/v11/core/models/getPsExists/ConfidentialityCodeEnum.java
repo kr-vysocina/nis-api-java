@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 import jakarta.xml.bind.annotation.XmlEnum;
 
-/**
- * Confidentiality level of the document: N = normal, R = restricted, V = very restricted.
- */
 @XmlEnum(String.class)
 public enum ConfidentialityCodeEnum {
     N("N"),

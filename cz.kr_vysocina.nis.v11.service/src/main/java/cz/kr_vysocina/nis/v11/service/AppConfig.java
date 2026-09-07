@@ -22,6 +22,6 @@ public class AppConfig extends ResourceConfig {
             }
         });
 
-        register(OpenApiResource.class); //Register OpenAPI (Swagger) document + UI resource at rest/openapi.json
+        register(OpenApiResource.class); //Register swagger
     }
 }

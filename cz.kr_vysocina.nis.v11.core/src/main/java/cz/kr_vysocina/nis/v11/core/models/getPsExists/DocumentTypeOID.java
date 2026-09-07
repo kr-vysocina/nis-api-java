@@ -1,9 +1,5 @@
 package cz.kr_vysocina.nis.v11.core.models.getPsExists;
 
-/**
- * OID codes (ArtDecor OID template) for the document types exchanged via {@code documentList} (see NIXZD v11 spec,
- * §getPsExists.xml, typeOID).
- */
 public final class DocumentTypeOID {
 
     public static final String ORCD_MEDICAL_IMAGING_REPORT_L1 = "1.3.6.1.4.1.12559.11.10.1.3.1.1.10";

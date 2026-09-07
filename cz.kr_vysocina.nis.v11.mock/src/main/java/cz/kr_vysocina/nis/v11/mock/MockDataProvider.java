@@ -113,7 +113,6 @@ public class MockDataProvider implements IDataProvider {
 
         List<DocumentMetadataModel> documentList = new ArrayList<>();
 
-        // Ambulantní zpráva ve formátu PDF (OrCD hospital discharge report / L1)
         DocumentMetadataModel documentMetadataModel1 = new DocumentMetadataModel();
         documentMetadataModel1.setId("ICZ123940.3");
         documentMetadataModel1.setOid("1.2.203.24341.1.10.35001000.6.1");
@@ -127,7 +126,6 @@ public class MockDataProvider implements IDataProvider {
         documentMetadataModel1.setConfidentialityCode(ConfidentialityCodeEnum.N);
         documentList.add(documentMetadataModel1);
 
-        // Zpráva z obrazového vyšetření (OrCD medical imaging report / L1)
         DocumentMetadataModel documentMetadataModel2 = new DocumentMetadataModel();
         documentMetadataModel2.setId("ICZ123940.4");
         documentMetadataModel2.setOid("1.2.203.24341.1.10.35001000.7.1");
@@ -142,7 +140,6 @@ public class MockDataProvider implements IDataProvider {
         documentMetadataModel2.setAuthors(Collections.emptyList());
         documentList.add(documentMetadataModel2);
 
-        // Propouštěcí zpráva (OrCD hospital discharge report / L1) - with reason of hospitalisation and authors
         DocumentMetadataModel documentMetadataModel3 = new DocumentMetadataModel();
         documentMetadataModel3.setId("ICZ123940.5");
         documentMetadataModel3.setOid("1.2.203.24341.1.10.35001000.8.1");

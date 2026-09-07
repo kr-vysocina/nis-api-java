@@ -1,9 +1,5 @@
 package cz.kr_vysocina.nis.v11.core.models.getPsExists;
 
-/**
- * LOINC codes for the document types exchanged via {@code documentList} (see NIXZD v11 spec, §getPsExists.xml,
- * typeLOINC).
- */
 public final class DocumentTypeLOINC {
 
     public static final String ORCD_MEDICAL_IMAGING_REPORT = "18748-4";
