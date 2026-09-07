@@ -6,19 +6,21 @@ import cz.kr_vysocina.nis.v11.core.models.PurposeOfUse;
 import cz.kr_vysocina.nis.v11.core.models.getPsExists.GetPsExistsResponseModel;
 import cz.kr_vysocina.nis.v11.core.models.sayHello.SayHelloModel;
 import cz.kr_vysocina.nis.v11.core.providers.IDataProvider;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
-@Api(tags = {"NIS-API-v11"})
+@Tag(name = "NIS-API-v11")
 @Path("api/nixzd/v11")
 @Produces({MediaType.APPLICATION_XML})
 @Consumes({MediaType.APPLICATION_XML})
@@ -33,11 +35,11 @@ public class NisApiV11 {
 
     @GET
     @Path("sayHello.xml")
-    @ApiOperation(
-            value = "Say Hello operation",
-            notes = "This operation can be called only for testing the connection and availability of the service",
-            response = SayHelloModel.class)
-    @ApiResponse(code = 200, message = "Response for the parameters")
+    @Operation(
+            summary = "Say Hello operation",
+            description = "This operation can be called only for testing the connection and availability of the service")
+    @ApiResponse(responseCode = "200", description = "Response for the parameters",
+            content = @Content(schema = @Schema(implementation = SayHelloModel.class)))
     public Response sayHello() {
 
         logger.debug("Running sayHello.xml");
@@ -51,19 +53,19 @@ public class NisApiV11 {
 
     @GET
     @Path("getPsExists.xml")
-    @ApiOperation(
-            value = "Get PS exists operation",
-            notes = "This operation can be called to get list of PS metadata",
-            response = GetPsExistsResponseModel.class)
-    @ApiResponse(code = 200, message = "Response for the parameters")
+    @Operation(
+            summary = "Get PS exists operation",
+            description = "This operation can be called to get list of PS metadata")
+    @ApiResponse(responseCode = "200", description = "Response for the parameters",
+            content = @Content(schema = @Schema(implementation = GetPsExistsResponseModel.class)))
     public Response getPsExists(
-            @ApiParam(value = NISApiDescription.PARAM_ID_RID_DESC, required = true) @QueryParam("idRID") String idRID,
-            @ApiParam(value = NISApiDescription.PARAM_ID_TYPE_DESC, required = true) @QueryParam("idType") IdType idType,
-            @ApiParam(value = NISApiDescription.PARAM_ID_VALUE_DESC, required = true) @QueryParam("idValue") String idValue,
-            @ApiParam(value = NISApiDescription.PARAM_PURPOSE_OF_USE_DESC, required = true) @QueryParam("purposeOfUse") PurposeOfUse purposeOfUse,
-            @ApiParam(value = NISApiDescription.PARAM_SUBJECT_NAME_ID_DESC, required = true) @QueryParam("subjectNameId") String subjectNameId,
-            @ApiParam(value = NISApiDescription.PARAM_REQUEST_ORG_ID_DESC) @QueryParam("requestOrgId") String requestOrganizationId,
-            @ApiParam(value = NISApiDescription.PARAM_REQUEST_ID_DESC, required = true) @QueryParam("requestId") String requestId
+            @Parameter(description = NISApiDescription.PARAM_ID_RID_DESC, required = true) @QueryParam("idRID") String idRID,
+            @Parameter(description = NISApiDescription.PARAM_ID_TYPE_DESC, required = true) @QueryParam("idType") IdType idType,
+            @Parameter(description = NISApiDescription.PARAM_ID_VALUE_DESC, required = true) @QueryParam("idValue") String idValue,
+            @Parameter(description = NISApiDescription.PARAM_PURPOSE_OF_USE_DESC, required = true) @QueryParam("purposeOfUse") PurposeOfUse purposeOfUse,
+            @Parameter(description = NISApiDescription.PARAM_SUBJECT_NAME_ID_DESC, required = true) @QueryParam("subjectNameId") String subjectNameId,
+            @Parameter(description = NISApiDescription.PARAM_REQUEST_ORG_ID_DESC) @QueryParam("requestOrgId") String requestOrganizationId,
+            @Parameter(description = NISApiDescription.PARAM_REQUEST_ID_DESC, required = true) @QueryParam("requestId") String requestId
     ) {
 
         logger.debug("Running getPsExists.xml");
@@ -87,24 +89,24 @@ public class NisApiV11 {
 
     @GET
     @Path("getPs.cda")
-    @ApiOperation(
-            value = "Get PS CDA operation",
-            notes = "This operation can be called to get PS document",
-            response = byte[].class)
-    @ApiResponse(code = 200, message = "Response for the parameters")
+    @Operation(
+            summary = "Get PS CDA operation",
+            description = "This operation can be called to get PS document")
+    @ApiResponse(responseCode = "200", description = "Response for the parameters",
+            content = @Content(mediaType = MediaType.APPLICATION_OCTET_STREAM, schema = @Schema(type = "string", format = "binary")))
     @Produces({MediaType.APPLICATION_OCTET_STREAM})
     public Response getPsCda(
-            @ApiParam(value = NISApiDescription.PARAM_SOURCE_IDENTIFIER_DESC, required = true) @QueryParam("sourceIdentifier") String sourceIdentifier,
-            @ApiParam(value = NISApiDescription.PARAM_ID_RID_DESC, required = true) @QueryParam("idRID") String idRID,
-            @ApiParam(value = NISApiDescription.PARAM_ID_TYPE_DESC, required = true) @QueryParam("idType") IdType idType,
-            @ApiParam(value = NISApiDescription.PARAM_ID_VALUE_DESC, required = true) @QueryParam("idValue") String idValue,
-            @ApiParam(value = NISApiDescription.PARAM_PURPOSE_OF_USE_DESC, required = true) @QueryParam("purposeOfUse") PurposeOfUse purposeOfUse,
-            @ApiParam(value = NISApiDescription.PARAM_SUBJECT_NAME_ID_DESC, required = true) @QueryParam("subjectNameId") String subjectNameId,
-            @ApiParam(value = NISApiDescription.PARAM_REQUEST_ORG_ID_DESC) @QueryParam("requestOrgId") String requestOrganizationId,
-            @ApiParam(value = NISApiDescription.PARAM_CDA_TYPE_DESC, required = true) @QueryParam("cdaType") CDAType cdaType,
-            @ApiParam(value = NISApiDescription.PARAM_CDA_ID_DESC, required = true) @QueryParam("cdaId") String cdaId,
-            @ApiParam(value = NISApiDescription.PARAM_CDA_OID_DESC, required = true) @QueryParam("cdaOid") String cdaOid,
-            @ApiParam(value = NISApiDescription.PARAM_REQUEST_ID_DESC, required = true) @QueryParam("requestId") String requestId
+            @Parameter(description = NISApiDescription.PARAM_SOURCE_IDENTIFIER_DESC, required = true) @QueryParam("sourceIdentifier") String sourceIdentifier,
+            @Parameter(description = NISApiDescription.PARAM_ID_RID_DESC, required = true) @QueryParam("idRID") String idRID,
+            @Parameter(description = NISApiDescription.PARAM_ID_TYPE_DESC, required = true) @QueryParam("idType") IdType idType,
+            @Parameter(description = NISApiDescription.PARAM_ID_VALUE_DESC, required = true) @QueryParam("idValue") String idValue,
+            @Parameter(description = NISApiDescription.PARAM_PURPOSE_OF_USE_DESC, required = true) @QueryParam("purposeOfUse") PurposeOfUse purposeOfUse,
+            @Parameter(description = NISApiDescription.PARAM_SUBJECT_NAME_ID_DESC, required = true) @QueryParam("subjectNameId") String subjectNameId,
+            @Parameter(description = NISApiDescription.PARAM_REQUEST_ORG_ID_DESC) @QueryParam("requestOrgId") String requestOrganizationId,
+            @Parameter(description = NISApiDescription.PARAM_CDA_TYPE_DESC, required = true) @QueryParam("cdaType") CDAType cdaType,
+            @Parameter(description = NISApiDescription.PARAM_CDA_ID_DESC, required = true) @QueryParam("cdaId") String cdaId,
+            @Parameter(description = NISApiDescription.PARAM_CDA_OID_DESC, required = true) @QueryParam("cdaOid") String cdaOid,
+            @Parameter(description = NISApiDescription.PARAM_REQUEST_ID_DESC, required = true) @QueryParam("requestId") String requestId
     ) {
 
         logger.debug("Running getPs.cda");
