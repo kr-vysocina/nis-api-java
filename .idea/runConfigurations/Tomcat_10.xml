@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Tomcat 9.0.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.54" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+  <configuration default="false" name="Tomcat 10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="ms-17" nameIsGenerated="true">
     <option name="OPEN_IN_BROWSER_URL" value="https://localhost:8091/nis-api-v11-service/" />
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
